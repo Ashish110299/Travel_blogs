@@ -1,0 +1,21 @@
+.subs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0rem 4rem 0rem;
+  background: #383941;
+  color: #fff;
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+    text-align: center;
+
+    &_heading{
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+}

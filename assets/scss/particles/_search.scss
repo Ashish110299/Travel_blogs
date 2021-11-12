@@ -1,0 +1,28 @@
+.search{
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  height: 3.5rem;
+
+  &__text{
+    width: 70%;
+    padding: .5rem 1rem;
+    color: #111;
+    font-size: 1.2rem;
+    font-weight: 500;
+    // box-shadow: 0 0px 20px rgb(0 0 0 / 0.2);
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &__submit{
+    width: 30%;
+    padding: 0rem 1.3rem;
+    font-size: 22px;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    background: linear-gradient(90deg, #36BE58, #ABFF63 90%);
+  }
+}

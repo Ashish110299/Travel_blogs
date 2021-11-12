@@ -1,0 +1,65 @@
+.footer{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 4rem;
+  margin: 0rem 10%;
+
+  &__contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &_heading{
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    &_tel:hover,&_address:hover,&_email:hover{
+      color: green;
+    }
+
+  }
+
+  &__popular{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &_itemsCont{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &_item{
+      font-size: 1rem;
+
+      &:hover{
+        color: green;
+      }
+    }
+  }
+
+  &__socialButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &_contactus,&_{
+      padding: 1rem;
+      border: 1px solid rgb(160, 152, 152);
+      border-radius: .3rem;
+    }
+
+    &_social{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem;
+      border: 1px solid rgb(160, 152, 152);
+      border-radius: .3rem;
+    }
+  }
+}

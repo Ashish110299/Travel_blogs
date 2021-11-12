@@ -1,0 +1,63 @@
+.postCards{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0px 30px rgb(0 0 0 / 0.2);
+  
+  &__imgCont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__image{
+    width: 100%;
+  }
+
+  &__details{
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (max-width: 1100px) {
+      padding: 1rem;
+      gap: 1rem;
+    }
+  }
+
+  &__author-Date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &__paraGraph{
+    font-size: 2rem;
+    font-weight: 600;
+
+    @media (max-width: 1100px) {
+      font-size: 24px;
+    }
+  }
+
+  &__readMore{
+    color: #3ABF5B;
+    font-size: 1rem;
+    text-align: left;
+    display: block;
+  }
+
+  &__date,&__authorName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    @media (max-width: 1100px) {
+      gap: 10px;
+    }
+  }
+}

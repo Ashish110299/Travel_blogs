@@ -1,0 +1,23 @@
+.aboutHeader{
+
+  &__banerCont{
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  &__banner{
+    width: 100%;
+  }
+
+  &__bannerTitle{
+    position: absolute;
+    bottom: 1rem;
+    font-size: 3.4rem;
+    font-weight: 600;
+    padding: 0rem 6rem;
+  }
+}
