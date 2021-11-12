@@ -1,23 +1,21 @@
 <template>
-  <div>
     <div class="home">
       <div class="home_container">
-        <div class="home__hero">
+        <div class="home__hero container__small">
           <Hero/>
         </div>
-        <div class="home__BlogCard container">
+        <div class="home__BlogCard container__small ">
           <BlogsCard/>
           <BlogsCard/>
           <BlogsCard/>
         </div>
-        <div class="home__button">
+        <div class="home__button container__small">
           <Button/>
         </div>
-        <div class="home__posts">
+        <div class="home__posts container__small">
           <Posts/>
         </div>
       </div>
-    </div>
     <!-- <div class="home container">
       <div class="home_container container__small">
         <div class="home__hero">
@@ -49,13 +47,13 @@ import Posts from '~/components/Posts.vue'
 import SubscriptionBox from '~/components/SubscriptionBox.vue'
 export default {
   components: {
-    MenuBar,
     Hero,
     BlogsCard,
     Posts,
     SubscriptionBox,
     Footer,
     Button,
+    MenuBar,
   }
 }
 

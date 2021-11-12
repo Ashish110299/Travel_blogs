@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },      
       { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" },
       { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" },
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:wght@300;400;500;600;700&display=swap" },
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Mohave:ital,wght@1,700&family=Poppins:wght@300;400;500;600;700&display=swap" },
     ],
   },
 

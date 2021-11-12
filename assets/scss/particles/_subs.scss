@@ -3,19 +3,33 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 0rem 4rem 0rem;
-  background: #383941;
+  background: hsl(233, 7%, 24%);
   color: #fff;
+  width: 100vw;
+
+  @media (max-width: 576px) {
+    padding: 1rem 1rem 2rem 1rem;
+  } 
 
   &__content{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 50%;
+    width: 35%;
     text-align: center;
+
+    @media (max-width: 576px) {
+      width: 100%;
+      gap: 1rem;
+    }
 
     &_heading{
       font-size: 1.3rem;
       font-weight: 600;
+
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
     }
   }
 }

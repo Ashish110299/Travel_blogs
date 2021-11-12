@@ -4,6 +4,10 @@
   gap: 0px;
   height: 3.5rem;
 
+  @media (max-width: 576px) {
+    height: 3rem;
+  }
+
   &__text{
     width: 70%;
     padding: .5rem 1rem;
@@ -11,6 +15,10 @@
     font-size: 1.2rem;
     font-weight: 500;
     // box-shadow: 0 0px 20px rgb(0 0 0 / 0.2);
+
+    @media (max-width: 576px) {
+      width: 60%;  
+    }
 
     &:focus{
       outline: none;
@@ -24,5 +32,10 @@
     border-top-right-radius: .5rem;
     border-bottom-right-radius: .5rem;
     background: linear-gradient(90deg, #36BE58, #ABFF63 90%);
+
+    @media (max-width: 576px) {
+      width: 40%;
+      padding: 0rem 1rem;
+    }
   }
-}
+} 

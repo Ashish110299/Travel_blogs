@@ -1,13 +1,10 @@
 <template>
-  <div class="slider">
+  <div class="slider container__small">
     <div class="slider__details">
       <div class="slider__details_Smheading">My Experience Blog</div>
       <div class="slider__details_heading">My travel Ideas</div>
       <div class="slider__details_descr">
-        Far far away, behind the word mountains, far from the countries 
-        Vokalia and Consonantia, there live the blind texts. Separated they 
-        live in Bookmarksgrove right at the coast of the Semantics, 
-        a large language ocean.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, blanditiis delectus. Esse dolore quis maiores sequi facilis! Vel veritatis quibusdam, excepturi incidunt quisquam similique, ratione eveniet eius nihil accusantium non?
       </div>
       <div class="slider__indicatorCont">
         <span class="slider__indicator"></span>

@@ -4,12 +4,23 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 4rem;
-  margin: 0rem 10%;
+  width: 100vw;
+  
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
   &__contacts{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @media (max-width: 576px) {
+      gap: .5rem;
+    }
 
     &_heading{
       font-size: 1.2rem;
@@ -18,8 +29,8 @@
 
     &_tel:hover,&_address:hover,&_email:hover{
       color: green;
+      font-weight: 600;
     }
-
   }
 
   &__popular{
@@ -27,12 +38,19 @@
     flex-direction: column;
     gap: 2rem;
 
+    @media (max-width: 576px) {
+      gap: .5rem;
+    }
+
     &_itemsCont{
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      @media (max-width: 576px) {
+        gap: .5rem;
+      }
     }
-
+    
     &_item{
       font-size: 1rem;
 
@@ -47,19 +65,39 @@
     flex-direction: column;
     justify-content: space-evenly;
 
-    &_contactus,&_{
+    @media (max-width: 576px) {
+      gap: .5rem;
+    }
+
+    &_contactus{
       padding: 1rem;
       border: 1px solid rgb(160, 152, 152);
       border-radius: .3rem;
+      text-align: center;
+
+      @media (max-width: 576px) {
+        padding: .5rem 1rem;
+      }
     }
 
-    &_social{
+    &__social{
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: row;
       justify-content: space-between;
       padding: 1rem;
       border: 1px solid rgb(160, 152, 152);
       border-radius: .3rem;
+
+      @media (max-width: 576px) {
+        padding: .5rem 1rem;
+      }
+
+      &-image{
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 }
