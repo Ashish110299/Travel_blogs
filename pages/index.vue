@@ -1,22 +1,22 @@
 <template>
-    <div class="home">
-      <div class="home_container">
-        <div class="home__hero container__small">
-          <pre>{{travelBlogs}}</pre>
-          <Hero/>
-        </div>
-        <div class="home__BlogCard container__small ">
-          <BlogsCard/>
-          <BlogsCard/>
-          <BlogsCard/>
-        </div>
-        <div class="home__button container__small">
-          <Button/>
-        </div>
-        <div class="home__posts container__small">
-          <Posts/>
-        </div>
+  <div class="home">
+    <!-- <pre>{{results}}</pre> -->
+    <div class="home_container">
+      <div class="home__hero container__small">
+        <Hero />
       </div>
+      <div class="home__BlogCard container__small">
+        <template v-for="(blogs,blogsIndex) in Blogs">
+          <BlogsCard :key="blogsIndex" :Blogscards="blogs" />
+        </template>
+      </div>
+      <div class="home__button container__small">
+        <!-- <Button /> -->
+      </div>
+      <div class="home__posts container__small">
+        <Posts />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,25 +32,24 @@ export default {
     Posts,
     Button,
   },
-
-  data (){
-    return{
-      travelBlogs: [],
+  props: ['results'],
+  
+  created() {
+    if( !this.$store.state.wordPressBlog.length ) {
+      this.$store.dispatch('wordpressApiBlogs');
     }
   },
-  
-  async fetch() {
-    this.travelBlogs = await fetch(
-      'http://firstproject.test/wp-json/wp/v2/posts/73' 
-    ).then(res => res.json());
-    console.log(wordPresAPI);
-  }
-  
+
+  computed: {
+    Blogs() {
+      return this.$store.state.wordPressBlog;
+    },
+  },
 }
 
 </script>
 
 <style lang="scss" scoped>
 
-</style>>
+</style>
 

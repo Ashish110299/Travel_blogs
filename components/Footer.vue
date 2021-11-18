@@ -22,16 +22,16 @@
       </div>
     </div>
     <div class="footer__socialButton">
-      <nuxt-link  to="/travel-blog" class="footer__socialButton_contactus">Contact Us</nuxt-link>
+      <nuxt-link  to="/" class="footer__socialButton_contactus">Contact Us</nuxt-link>
       <div class="footer__socialButton__social">
         <h5 class="footer__socialButton__social-heading">Follow us</h5>
-        <nuxt-link to="/travel-blog/" class="footer__socialButton-item1">
+        <nuxt-link to="/" class="footer__socialButton-item1">
           <img src="~/assets/images/facebook.png" alt="" class="footer__socialButton__social-image">
         </nuxt-link>
-        <nuxt-link to="/travel-blog/" class="footer__socialButton-item1">
+        <nuxt-link to="/" class="footer__socialButton-item1">
           <img src="~/assets/images/instagram.png" alt="" class="footer__socialButton__social-image">
         </nuxt-link>
-        <nuxt-link to="/travel-blog/" class="footer__socialButton-item1">
+        <nuxt-link to="/" class="footer__socialButton-item1">
           <img src="~/assets/images/whatsapp.png" alt="" class="footer__socialButton__social-image">
         </nuxt-link>
       </div>

@@ -1,4 +1,5 @@
   .about{
+
     &__container{
       display: flex;
       flex-direction: column;
@@ -17,9 +18,22 @@
       text-align: left;
       text-justify: auto;
 
-
       @media (max-width: 576px) {
         font-size: 1rem;
+      }
+
+      &_answ{
+        h2,h3,h4{
+          font-size: 21px;
+          font-weight: 600;
+          padding-bottom: 1rem;
+        }
+        p{
+          padding-bottom: 2rem  ;
+        }
+        img{
+          width: 100%;
+        }
       }
     }
 
@@ -28,6 +42,15 @@
 
       @media (max-width: 576px) {
         padding: 0rem;
+      }
+    }
+
+    &__image{
+      width: 100%;
+      height: 700px;
+
+      @media (max-width: 576px) {
+        height: auto;
       }
     }
   }

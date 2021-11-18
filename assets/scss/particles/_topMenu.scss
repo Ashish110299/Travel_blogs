@@ -44,7 +44,6 @@
   }
 
   &__menuItems{
-    display: block;
     font-size: 1rem;
     font-weight: 600;
     color: #434040;
@@ -101,11 +100,11 @@
       background: #fff;
       text-align: center;
       display: flex;
-      flex-direction: column; 
+      flex-direction: column;
       
       @media (max-width: 576px) {
         display: none;
-      } 
+      }
     }
 
     &__menuItems{

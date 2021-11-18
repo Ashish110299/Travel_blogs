@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'todo',
+    title: 'Blogs',
     htmlAttrs: {
       lang: 'en'
     },
@@ -12,10 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },      
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" },
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" },
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Mohave:ital,wght@1,700&family=Poppins:wght@300;400;500;600;700&display=swap" },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
 

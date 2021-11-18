@@ -1,26 +1,21 @@
 <template>
-  <div class="postCards">
-    <div class="postCards__imgCont">
-      <img src="~/assets/images/posts.png" alt="" class="postCards__image">
-    </div>
+  <div class="postCards" v-if="data">
+    <nuxt-link :to="`/travel-blog/${data.id}`" class="postCards__imgCont">
+      <img :src="`${data.x_featured_media_large}`" alt="" class="postCards__image">
+    </nuxt-link>
     <div class="postCards__details">
       <div class="postCards__author-Date">
-        <div class="postCards__date"><img src="~/assets/images/dateCalendar.png" alt=""> 10 FEB 2018</div>
-        <div class="postCards__authorName"> <img src="~/assets/images/writer.png" alt=""> Writer</div>
+        <div class="postCards__date"><img src="~/assets/images/dateCalendar.png" alt="">{{data.date.slice(0,10)}}</div>
+        <div class="postCards__authorName"> <img src="~/assets/images/writer.png" alt="">{{data.x_author}}</div>
       </div>
-      <p class="postCards__paraGraph">
-        Palatial, palatable 
-        Portugal: a long 
-        weekend in Porto
-      </p>
-      <a href="#" class="postCards__readMore">Read More</a>
+      <p class="postCards__paraGraph" v-html="data.title.rendered"></p>
+      <nuxt-link :to="`/travel-blog/${data.id}`" class="postCards__readMore" >Read More</nuxt-link>
     </div>
   </div>
 </template>
-
 <script>
 export default {
-
+  props: ['data']
 }
 </script>
 

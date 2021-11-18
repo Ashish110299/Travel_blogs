@@ -17,6 +17,11 @@
 
   &__banner{
     width: 100%;
+    height: 800px;
+
+    @media (max-width: 576px) {
+      height: auto;
+    }
   }
 
   &__bannerTitle{
@@ -25,6 +30,7 @@
     font-size: 3.4rem;
     font-weight: 600;
     padding: 0rem 6rem;
+    color: #fff;
 
     @media (max-width: 1200px) {
       font-size: 2rem;

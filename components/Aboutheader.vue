@@ -1,10 +1,9 @@
 <template>
-  <div class="aboutHeader">
+  <div class="aboutHeader" v-if="aboutheader !== ''">
+    <!-- <pre>{{aboutheader}}</pre>  -->
     <div class="aboutHeader__banerCont">
-      <img src="~/assets/images/photo.png" alt="" class="aboutHeader__banner">
-      <h1 class="aboutHeader__bannerTitle">
-        Palatial, palatable Portugal: a long weekend 
-        in Porto and the Douro
+      <img :src="`${aboutheader.x_featured_media_large}`" alt="" class="aboutHeader__banner">
+      <h1 class="aboutHeader__bannerTitle" v-html="aboutheader.title.rendered">
       </h1>
     </div>
   </div>
@@ -12,21 +11,7 @@
 
 <script>
   export default {
-
-    data(){
-      return{
-        aboutHeader: [],
-        }
-    },
-
-    methods:{
-      async fetch() {
-        this.aboutHeader = await fetch(
-          'http://firstproject.test/wp-json/wp/v2/pages/'
-        ).then(res => res.json());
-        console.log(wordPresAPI);
-      }
-    }
+    props: ['aboutheader']
   }
 </script>
 
