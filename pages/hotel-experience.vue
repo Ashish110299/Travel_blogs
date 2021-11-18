@@ -14,22 +14,6 @@
 <script>
 export default {
   async asyncData({$axios}) {
-    // if(localStorage.getItem(`hotelExp`) === null){
-    //   var BlogsCards = await $axios.$get(
-    //     `http://firstproject.test/wp-json/wp/v2/pages/161`
-    //   )
-    //   let BlogsCards__serialized =  JSON.stringify(BlogsCards);
-    //   localStorage.setItem(`hotelExp`,BlogsCards__serialized);
-    // }
-
-    // else{
-    //   let reusltById = localStorage.getItem(`hotelExp`)
-    //   var BlogsCards = JSON.parse(reusltById)
-    // }
-      
-    // return{
-    //   BlogsCards
-    // }
     if(process.client){
       if(localStorage.getItem(`hotelExp`) === null){
         var BlogsCards = await $axios.$get(
@@ -38,12 +22,10 @@ export default {
         let BlogsCards__serialized =  JSON.stringify(BlogsCards);
         localStorage.setItem(`hotelExp`,BlogsCards__serialized);
       }
-  
       else{
         let reusltById = localStorage.getItem(`hotelExp`)
         var BlogsCards = JSON.parse(reusltById)
       }
-        
       return{
         BlogsCards
       }

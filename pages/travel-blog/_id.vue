@@ -31,7 +31,7 @@ import About from '~/components/About.vue'
         }
         else{
           var reusltById = localStorage.getItem(`Id_${params.id}`)
-          var singleBlog= JSON.parse(reusltById)
+          var singleBlog = JSON.parse(reusltById)
         }
         return{
           singleBlog

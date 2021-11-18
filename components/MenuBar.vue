@@ -33,11 +33,8 @@
 <script>
   
   export default{
-    data(){
-      return {
-       
-      }
-    },
+    
+    
 
     methods: {
       async showMobileMenu() {
@@ -47,7 +44,24 @@
         } else {
           MobileMenu.style.display = "none";
         }
-      }
+      },
+
+      async asyncData({$axios}) {
+        if(localStorage.getItem(`hotelExp`) === null){
+          var BlogsCards = await $axios.$get(
+            `http://firstproject.test/wp-json/wp/v2/pages/`
+          )
+          let BlogsCards__serialized =  JSON.stringify(BlogsCards);
+          localStorage.setItem(`hotelExp`,BlogsCards__serialized);
+        }
+        else{
+          let reusltById = localStorage.getItem(`hotelExp`)
+          var BlogsCards = JSON.parse(reusltById)
+        }
+        return{
+          BlogsCards
+        }
+      },
     }
   }
 

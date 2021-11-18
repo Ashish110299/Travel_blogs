@@ -5,7 +5,7 @@ export const state = () => ({
 export const actions = {
   async wordpressApiBlogs({ commit }) {
     if(localStorage.getItem("travelBlogs") === null){
-      const response = await this.$axios.$get('http://firstproject.test/wp-json/wp/v2/posts?_embed');
+      var response = await this.$axios.$get('http://firstproject.test/wp-json/wp/v2/posts');
       var content = response;
       let content_searialized = JSON.stringify(content);
       localStorage.setItem("travelBlogs", content_searialized);
@@ -14,6 +14,8 @@ export const actions = {
     else{
       let blogs = localStorage.getItem("travelBlogs")
       var content = JSON.parse(blogs);
+      var response = await this.$axios.$get('http://firstproject.test/wp-json/wp/v2/posts');
+      var content = response;
     }
     commit("storeWordpressBlogs", content);
   },
