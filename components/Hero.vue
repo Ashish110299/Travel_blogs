@@ -1,5 +1,5 @@
 <template>
-  <div class="slider container__small">
+  <div class="slider">
     <div class="slider__details">
       <div class="slider__details_Smheading">My Experience Blog</div>
       <div class="slider__details_heading">My travel Ideas</div>
@@ -21,11 +21,9 @@
       <img src="~/assets/images/HeroImage.png" alt="" class="slider__image">
     </div>
   </div>
-</template>
+</template> 
 <script>
-  export default {
-    
-  }
+  
 </script>
 
 <style lang="scss" scoped>

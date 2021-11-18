@@ -23,25 +23,34 @@
         <nuxt-link to="/travel-blog" class="topMenu__mobileMenu__menuItems">Hotel Experiences</nuxt-link>
         <nuxt-link to="/travel-blog" class="topMenu__mobileMenu__menuItems">Hotel Experiences</nuxt-link>
       </div>
-      <nuxt-link to="/">
-        <img src="~/assets/images/menu.png" alt="" class="topMenu__mobileMenu-image" onclick="myFunction()">
-      </nuxt-link>
+      <div>
+        <img src="~/assets/images/menu.png" alt="" class="topMenu__mobileMenu-image" @click="mobileMenu()">
+      </div>  
     </div>
   </div>
-</template>
+</template> 
 
 <script>
-  
- function myFunction() {
-  var x = document.getElementById("topMenu__mobileMenu__tabsCont");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
 
- 
+  export default{
+    data(){
+      return {
+        mobileMen: '',
+      }
+    },
+
+    methods: {
+      async mobileMenu() {
+        var x = document.getElementById("topMenu__mobileMenu__tabsCont");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    }
+  }
+
 </script>
 
 <style>

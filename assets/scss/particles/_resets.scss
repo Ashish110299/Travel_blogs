@@ -8,11 +8,15 @@
 .container {
   max-width: 1440px;
   margin: 0rem auto;
-  // overflow: hidden;
+  // overflow: hidden;  
 
   &__small {
     max-width: 1156px;
     margin: 0rem auto;
+    
+    @media (max-width: 1199px) {
+     width: 90%;
+    }
   }
 }
 
@@ -20,7 +24,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 img{

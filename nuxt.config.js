@@ -38,6 +38,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
+    // '@nuxtjs/eslint-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

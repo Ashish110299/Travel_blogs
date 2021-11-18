@@ -18,6 +18,10 @@
     width: 35%;
     text-align: center;
 
+    @media (max-width: 1199px) {
+      width: 50%;
+    }
+
     @media (max-width: 576px) {
       width: 100%;
       gap: 1rem;

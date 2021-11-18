@@ -6,6 +6,11 @@
   border-bottom: 1px solid #E2E0E0;
   position: relative;
 
+  @media (max-width: 1199px ) {
+    gap: 3rem;
+    padding: 1rem;
+  }
+
   @media (max-width: 576px) {
     display: flex;
     justify-content: space-between;
@@ -29,18 +34,27 @@
     justify-content: space-between;
     gap: 1rem;
 
+    @media (max-width: 1199px) {
+      gap: .6rem;
+    }
+
     @media (max-width: 576px) {
       display: none;
     }
   }
 
   &__menuItems{
+    display: block;
     font-size: 1rem;
     font-weight: 600;
     color: #434040;
     transition: .2s;
     &:hover{
       color: #ABFF63;
+    }
+
+    @media (max-width: 1199px) {
+      font-size: 12px;
     }
 
     @media (max-width: 576) {
@@ -80,6 +94,7 @@
 
     &__tabsCont{
       position: absolute;
+      display: block;
       width: 100%;
       right: 0px;
       top: 4rem;

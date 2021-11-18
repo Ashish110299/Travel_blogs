@@ -12,7 +12,21 @@
 
 <script>
   export default {
-    
+
+    data(){
+      return{
+        aboutHeader: [],
+        }
+    },
+
+    methods:{
+      async fetch() {
+        this.aboutHeader = await fetch(
+          'http://firstproject.test/wp-json/wp/v2/pages/'
+        ).then(res => res.json());
+        console.log(wordPresAPI);
+      }
+    }
   }
 </script>
 
