@@ -24,8 +24,15 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 img{
   max-width: 100%;
 }
+
+// a{
+//   color: #396EB0;
+//   font-weight: 600;
+//   margin: 0 5px;
+// }

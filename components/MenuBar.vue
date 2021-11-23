@@ -11,7 +11,7 @@
       <nuxt-link to="/best-street-food" class="topMenu__menuItems">Best Street food </nuxt-link>
     </div>
     <div class="topMenu__buttonCont">
-      <nuxt-link to="/" class="topMenu__subscribe">
+      <nuxt-link to="/" class="topMenu__subscribe" @click="show()">
         Subscribe
       </nuxt-link>
     </div>
@@ -24,7 +24,7 @@
         <nuxt-link to="/best-street-food" class="topMenu__mobileMenu__menuItems">Best Street food</nuxt-link>
       </div>
       <div> 
-        <img src="~/assets/images/menu.png" alt="" class="topMenu__mobileMenu-image" @click="showMobileMenu()">
+        <img src="~/assets/images/menu.png" alt="" class="topMenu__mobileMenu-image">
       </div>
     </div>
   </div>
@@ -33,9 +33,6 @@
 <script>
   
   export default{
-    
-    
-
     methods: {
       async showMobileMenu() {
         var MobileMenu = document.getElementById("topMenu__mobileMenu__tabsCont");

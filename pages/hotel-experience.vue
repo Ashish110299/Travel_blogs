@@ -1,6 +1,6 @@
 <template>
   <div class="hotelExp">
-    <div class="about__container container__small" v-if="Blogs != ''">
+    <div class="about__container container__small" v-if="BlogsCards">
       <!-- <pre>{{BlogsCards}}</pre> -->
       <div class="about__descr">
         <h6 class="about__descr_ques"></h6>
@@ -10,9 +10,15 @@
     </div>
   </div>
 </template>
-
+  
 <script>
 export default {
+  data(){
+    return{
+      BlogsCards:'',
+    }
+  },
+
   async asyncData({$axios}) {
     if(process.client){
       if(localStorage.getItem(`hotelExp`) === null){
@@ -25,8 +31,9 @@ export default {
       else{
         let reusltById = localStorage.getItem(`hotelExp`)
         var BlogsCards = JSON.parse(reusltById)
+        console.log(BlogsCards);
       }
-      return{
+      return{ 
         BlogsCards
       }
     }

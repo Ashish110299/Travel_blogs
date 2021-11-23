@@ -1,6 +1,6 @@
 <template>
   <div class="hotelExp">
-    <div class="about__container container__small" v-if="Blogs != ''">
+    <div class="about__container container__small" v-if="cheapTravel">
       <!-- <pre>{{cheapTravel}}</pre> -->
       <div class="about__descr">
         <h6 class="about__descr_ques"></h6>
@@ -13,22 +13,30 @@
 
 <script>
 export default {
-  async asyncData({$axios}) {
-    if(localStorage.getItem(`cheapTravel`) === null){
-      var cheapTravel = await $axios.$get(
-        `http://firstproject.test/wp-json/wp/v2/pages/165`
-      )
-      let cheapTravel__serialized =  JSON.stringify(cheapTravel);
-      localStorage.setItem(`cheapTravel`,cheapTravel__serialized);
-    }
-
-    else{
-      let reusltById = localStorage.getItem(`cheapTravel`)
-      var cheapTravel = JSON.parse(reusltById)
-      }
-      
+  data(){
     return{
-      cheapTravel
+      cheapTravel:'',
+    }
+  },
+  
+  async asyncData({$axios}) {
+    if(process.client){
+      if(localStorage.getItem(`cheapTravel`) === null){
+        var cheapTravel = await $axios.$get(
+          `http://firstproject.test/wp-json/wp/v2/pages/165`
+        )
+        let cheapTravel__serialized =  JSON.stringify(cheapTravel);
+        localStorage.setItem(`cheapTravel`,cheapTravel__serialized);
+      }
+  
+      else{
+        let reusltById = localStorage.getItem(`cheapTravel`)
+        var cheapTravel = JSON.parse(reusltById)
+        }
+        
+      return{
+        cheapTravel
+      }
     }
   },
 }

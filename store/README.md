@@ -1,10 +1,11 @@
-# STORE
+async asyncData({params, $axios}){
+  const blogdetail = params.slug
+  console.log(blogdetail)
+  var singleBlog = await $axios.$get(
+    `http://firstproject.test/wp-json/wp/v2/posts?slug=${blogdetail}`
+  )
 
-**This directory is not required, you can delete it if you don't want to use it.**
+  singleBlog = (singleBlog.length > 0) ? singleBlog[0] : {}
 
-This directory contains your Vuex Store files.
-Vuex Store option is implemented in the Nuxt.js framework.
-
-Creating a file in this directory automatically activates the option in the framework.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/vuex-store).
+  return { singleBlog }
+},
