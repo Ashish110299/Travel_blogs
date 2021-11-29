@@ -2,6 +2,7 @@
   <div class="hotelExp">
     <div class="about__container container__small" v-if="besPlaces">
       <!-- <pre>{{BlogsCards}}</pre> -->
+      <h1 class="about__title">{{besPlaces.title.rendered}}</h1>
       <div class="about__descr">
         <h6 class="about__descr_ques"></h6>
         <p class="about__descr_answ" v-html="besPlaces.content.rendered">

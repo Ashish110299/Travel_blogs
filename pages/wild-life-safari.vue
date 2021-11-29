@@ -1,6 +1,7 @@
 <template>
   <div class="hotelExp">
     <div class="about__container container__small" v-if="wildLife">
+      <h1 class="about__title">{{wildLife.title.rendered}}</h1>
       <div class="about__descr">
         <h6 class="about__descr_ques"></h6>
         <p class="about__descr_answ" v-html="wildLife.content.rendered">
@@ -22,7 +23,7 @@ export default {
         let wildLife__serialized =  JSON.stringify(wildLife);
         localStorage.setItem(`wildLife`,wildLife__serialized);
       }
-  
+       
       else{
         let reusltById = localStorage.getItem(`wildLife`)
         var wildLife = JSON.parse(reusltById)

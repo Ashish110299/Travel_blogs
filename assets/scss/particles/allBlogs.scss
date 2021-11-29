@@ -1,0 +1,21 @@
+.allBlogs {
+  margin-top: -2rem;
+
+  &__heading{
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+
+    @media (max-width: 576px) {
+      font-size: 2rem;
+      padding-top: 5rem;
+    }
+  }
+
+  &__heading2{
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}

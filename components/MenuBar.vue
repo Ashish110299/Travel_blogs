@@ -4,26 +4,32 @@
       <img src="~/assets/images/logo.png" alt="img" class="topMenu_logo">
     </nuxt-link>
     <div class="topMenu__menu">
+      <nuxt-link to="/blog-posts" class="topMenu__menuItems">All Posts</nuxt-link>
       <nuxt-link to="/hotel-experience" class="topMenu__menuItems">Hotel Experiences</nuxt-link>
       <nuxt-link to="/best-travel-place" class="topMenu__menuItems">Best travel places</nuxt-link>
       <nuxt-link to="/cheap-traveling-ideas" class="topMenu__menuItems">Cheap traveling ideas</nuxt-link>
       <nuxt-link to="/wild-life-safari" class="topMenu__menuItems">Wildlife Safari</nuxt-link>
       <nuxt-link to="/best-street-food" class="topMenu__menuItems">Best Street food </nuxt-link>
+      <nuxt-link to="/food" class="topMenu__menuItems">Food</nuxt-link>
+      <!-- <nuxt-link to="/food" class="topMenu__menuItems">Travel</nuxt-link> -->
     </div>
     <div class="topMenu__buttonCont">
-      <nuxt-link to="/" class="topMenu__subscribe" @click="show()">
+      <button  class="topMenu__subscribe" @click="focusOnMobile()">
         Subscribe
-      </nuxt-link>
+      </button>
     </div>
     <div class="topMenu__mobileMenu">
-      <div class="topMenu__mobileMenu__tabsCont">
+      <div class="topMenu__mobileMenu__tabsCont" id="mobileMenu">
+        <nuxt-link to="/blog-posts" class="topMenu__mobileMenu__menuItems">All Posts</nuxt-link>
         <nuxt-link to="/hotel-experience" class="topMenu__mobileMenu__menuItems">Hotel Experiences</nuxt-link>
         <nuxt-link to="/best-travel-place" class="topMenu__mobileMenu__menuItems">Best travel places</nuxt-link>
         <nuxt-link to="/cheap-traveling-ideas" class="topMenu__mobileMenu__menuItems">Cheap traveling ideas</nuxt-link>
         <nuxt-link to="/wild-life-safari" class="topMenu__mobileMenu__menuItems">Wildlife Safari</nuxt-link>
         <nuxt-link to="/best-street-food" class="topMenu__mobileMenu__menuItems">Best Street food</nuxt-link>
+        <nuxt-link to="/food" class="topMenu__mobileMenu__menuItems">Food</nuxt-link>
+        <!-- <nuxt-link to="/food" class="topMenu__mobileMenu__menuItems">travel</nuxt-link> -->
       </div>
-      <div> 
+      <div href="javascript:void(0);" class="topMenu__mobileMenu__icon" @click="showMobileMenu()"> 
         <img src="~/assets/images/menu.png" alt="" class="topMenu__mobileMenu-image">
       </div>
     </div>
@@ -31,16 +37,24 @@
 </template> 
 
 <script>
+import Button from './Button.vue';
   
   export default{
+  components: { Button },
+
     methods: {
       async showMobileMenu() {
-        var MobileMenu = document.getElementById("topMenu__mobileMenu__tabsCont");
-        if (MobileMenu.style.display === "none") {
-          MobileMenu.style.display != "none";
-        } else {
+      let MobileMenu = document.getElementById("mobileMenu");
+        if (MobileMenu.style.display === "block") {
           MobileMenu.style.display = "none";
-        }
+          
+        } else {
+          MobileMenu.style.display = "block";
+        } 
+      },
+
+      async focusOnMobile(){
+        document.getElementById("subscription").focus();
       },
 
       async asyncData({$axios}) {

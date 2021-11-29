@@ -5,8 +5,8 @@
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unkno
     </p>
     <div class="postsBox__cardsCont">
-      <template v-for="(post, postIndex) in Blogs">
-        <PostCards :key="postIndex" :data="post" />
+      <template v-for="(post, postIndex) in Blogs.slice(0,6)">
+        <PostCards :key="postIndex" :data="post"/>
       </template>
     </div>
   </div>  

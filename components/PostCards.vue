@@ -1,6 +1,6 @@
 <template>
   <div class="postCards" v-if="data">
-    <nuxt-link :to="`/travel-blog/${data.id}`" class="postCards__imgCont">
+    <nuxt-link :to="`/travel-blog/${data.slug}`" class="postCards__imgCont">
       <img :src="`${data.x_featured_media_large}`" alt="" class="postCards__image">
     </nuxt-link>
     <div class="postCards__details">
@@ -9,7 +9,7 @@
         <div class="postCards__authorName"> <img src="~/assets/images/writer.png" alt="">{{data.x_author}}</div>
       </div>
       <p class="postCards__paraGraph" v-html="data.title.rendered"></p>
-      <nuxt-link :to="`/travel-blog/${data.id}`" class="postCards__readMore" >Read More</nuxt-link>
+      <nuxt-link :to="`/travel-blog/${data.slug}`" class="postCards__readMore" >Read More</nuxt-link>
     </div>
   </div>
 </template>

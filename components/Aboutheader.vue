@@ -1,6 +1,6 @@
 <template>
   <div class="aboutHeader" v-if="aboutheader">
-    <!-- <pre>{{aboutheader}}</pre>  -->
+    <!-- <pre>{{aboutheader}}</pre> -->
     <div class="aboutHeader__banerCont">
       <img :src="`${aboutheader.x_featured_media_large}`" alt="" class="aboutHeader__banner">
       <h1 class="aboutHeader__bannerTitle" v-html="aboutheader.title.rendered"> 
@@ -17,4 +17,4 @@
 
 <style lang="scss" scoped>
 
-</style>
+</style>  

@@ -93,7 +93,6 @@
 
     &__tabsCont{
       position: absolute;
-      display: block;
       width: 100%;
       right: 0px;
       top: 4rem;
@@ -113,6 +112,7 @@
       color: #434040;
       transition: .2s;
       padding: .5rem 1rem;
+      display: block;
 
       &:hover{
         color: #ABFF63;

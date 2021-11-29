@@ -6,12 +6,12 @@
         <Hero />
       </div>
       <div class="home__BlogCard container__small">
-        <template v-for="(blogs,blogsIndex) in Blogs">
-          <BlogsCard :key="blogsIndex" :Blogscards="blogs" />
+        <template v-for="(blogs,blogsIndex) in Blogs.slice(0,3)">
+          <BlogsCard :key="blogsIndex" :Blogscards="blogs"/>
         </template>
-      </div>
-      <div class="home__button container__small">
-        <!-- <Button /> -->
+        <div class="button">
+          <nuxt-link to="/all-blogs" class="button__learnMore">More Posts</nuxt-link>
+        </div>
       </div>
       <div class="home__posts container__small">
         <Posts />
@@ -39,7 +39,7 @@ export default {
       this.$store.dispatch('wordpressApiBlogs');
     }
   },
-
+  
   computed: {
     Blogs() {
       return this.$store.state.wordPressBlog;
