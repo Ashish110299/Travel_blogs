@@ -5,7 +5,7 @@
     </nuxt-link>
     <div class="postCards__details">
       <div class="postCards__author-Date">
-        <div class="postCards__date"><img src="~/assets/images/dateCalendar.png" alt="">{{data.date.slice(0,10)}}</div>
+        <div class="postCards__date"><img src="~/assets/images/dateCalendar.png" alt="" class="postCards__author-dateCal">{{data.date.slice(0,10)}}</div>
         <div class="postCards__authorName"> <img src="~/assets/images/writer.png" alt="">{{data.x_author}}</div>
       </div>
       <p class="postCards__paraGraph" v-html="data.title.rendered"></p>

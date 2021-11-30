@@ -3,7 +3,6 @@
     <div class="BlogsCard">
       <!-- <pre>{{Blogscards}}</pre> -->
       <div class="BlogsCard__details">
-        <!-- {{serchedItem}} -->
         <div class="BlogsCard__details_smHeading" v-html="Blogscards.x_categories"></div>
         <h3 class="BlogsCard__details_heading" v-html="Blogscards.title.rendered"></h3>
         <div>
@@ -12,18 +11,16 @@
           <NuxtLink :to="`/travel-blog/${Blogscards.slug}`" class="BlogsCard__details_button">Read More</NuxtLink>     
         </div>
       </div>
-      <div class="BlogsCard__imaCont">
-        <nuxt-link :to="`/travel-blog/${Blogscards.slug}`" class="BlogsCard__img">
-          <img :src="`${Blogscards.x_featured_media_large}`" alt="" >
-        </nuxt-link>
-      </div>
+      <nuxt-link :to="`/travel-blog/${Blogscards.slug}`" class="BlogsCard__imaCont">
+        <img :src="`${Blogscards.x_featured_media_large}`" alt="" class="BlogsCard__img">
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['Blogscards','searchResult','serchedItem']
+  props: ['Blogscards']
 }
 </script>
 

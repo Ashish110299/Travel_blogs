@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 4rem;
-  // width: 100vw;
   
   @media (max-width: 576px) {
     display: flex;

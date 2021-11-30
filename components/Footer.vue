@@ -6,12 +6,10 @@
         25 Ratna Park,<br>
         Don Bausch Road, India
       </address>
-      <nuxt-link to="/" class="footer__contacts_tel">
-        <strong><span><img src="" alt=""></span> 9080000000</strong>
-      </nuxt-link>
-      <nuxt-link to="/" class="footer__contacts_email">
-        <strong><span><img src="" alt=""></span> info@myblog.com</strong>
-      </nuxt-link>
+      <div  class="footer__contacts_tel">
+        <strong><span><img src="" alt=""></span><a href="tel:9080000000" target="_blank">9080000000</a></strong>
+      </div>
+      <a href="mailto: info@myblog.com" class="footer__contacts_email" >info@myblog.com</a>
     </div>
     <div class="footer__popular">
       <h5 class="footer__contacts_heading">Popular</h5>
@@ -22,7 +20,8 @@
       </div>
     </div>
     <div class="footer__socialButton">
-      <nuxt-link  to="/" class="footer__socialButton_contactus">Contact Us</nuxt-link>
+      <a href="mailto: info@myblog.com" class="footer__socialButton_contactus" target="_blank">Contact Us</a>
+      <!-- <nuxt-link  to="/" class="footer__socialButton_contactus">Contact Us</nuxt-link> -->
       <div class="footer__socialButton__social">
         <h5 class="footer__socialButton__social-heading">Follow us</h5>
         <nuxt-link to="/" class="footer__socialButton-item1">

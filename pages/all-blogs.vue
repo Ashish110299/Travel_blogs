@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <h1 class="container__small allBlogs__heading2">BLOGS</h1>
     <div class="BlogsCard container__small" v-for="(singleBlog,singleBlogIndex) in Blogs" :key="singleBlogIndex">
       <!-- <pre>{{Blogs}}</pre> -->
@@ -18,11 +18,21 @@
         </nuxt-link>
       </div>
     </div>
+    <ul class="BlogsCard__pagenation container__small">
+      <!-- <a href="" class="BlogsCard__pagenation-pageNo">1</a> -->
+      <li class="BlogsCard__pagenation-list"><a href="" class="BlogsCard__pagenation-pageNo">&laquo;</a></li>
+      <li class="BlogsCard__pagenation-list"><a href="" class="BlogsCard__pagenation-pageNo">1</a></li>
+      <li class="BlogsCard__pagenation-list"><a href="" class="BlogsCard__pagenation-pageNo">2</a></li>
+      <li class="BlogsCard__pagenation-list"><a href="" class="BlogsCard__pagenation-pageNo">3</a></li>
+      <li class="BlogsCard__pagenation-list"><a href="" class="BlogsCard__pagenation-pageNo">4</a></li>
+      <li class="BlogsCard__pagenation-list"><a href="" class="BlogsCard__pagenation-pageNo">&raquo;</a></li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
+
 
   created() {
     if( !this.$store.state.wordPressBlog.length ) {

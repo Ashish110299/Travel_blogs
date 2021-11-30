@@ -79,7 +79,6 @@
     flex-direction: row;
     gap: 0px;
     height: 3.5rem;
-    // margin-left: 1rem;
 
     @media (max-width: 1200px) {
       height: 3rem;
@@ -104,6 +103,7 @@
     background: linear-gradient(90deg, #36BE58, #ABFF63 70%);
     border-top-right-radius: .5rem;
     border-bottom-right-radius: .5rem;
+    cursor: pointer;
   }
 
   &__imgCont{

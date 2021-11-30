@@ -4,14 +4,13 @@
       <img src="~/assets/images/logo.png" alt="img" class="topMenu_logo">
     </nuxt-link>
     <div class="topMenu__menu">
-      <nuxt-link to="/blog-posts" class="topMenu__menuItems">All Posts</nuxt-link>
+      <nuxt-link to="/blog-posts" class="topMenu__menuItems" >All Posts</nuxt-link>
       <nuxt-link to="/hotel-experience" class="topMenu__menuItems">Hotel Experiences</nuxt-link>
       <nuxt-link to="/best-travel-place" class="topMenu__menuItems">Best travel places</nuxt-link>
       <nuxt-link to="/cheap-traveling-ideas" class="topMenu__menuItems">Cheap traveling ideas</nuxt-link>
       <nuxt-link to="/wild-life-safari" class="topMenu__menuItems">Wildlife Safari</nuxt-link>
       <nuxt-link to="/best-street-food" class="topMenu__menuItems">Best Street food </nuxt-link>
       <nuxt-link to="/food" class="topMenu__menuItems">Food</nuxt-link>
-      <!-- <nuxt-link to="/food" class="topMenu__menuItems">Travel</nuxt-link> -->
     </div>
     <div class="topMenu__buttonCont">
       <button  class="topMenu__subscribe" @click="focusOnMobile()">
@@ -20,14 +19,17 @@
     </div>
     <div class="topMenu__mobileMenu">
       <div class="topMenu__mobileMenu__tabsCont" id="mobileMenu">
-        <nuxt-link to="/blog-posts" class="topMenu__mobileMenu__menuItems">All Posts</nuxt-link>
-        <nuxt-link to="/hotel-experience" class="topMenu__mobileMenu__menuItems">Hotel Experiences</nuxt-link>
-        <nuxt-link to="/best-travel-place" class="topMenu__mobileMenu__menuItems">Best travel places</nuxt-link>
-        <nuxt-link to="/cheap-traveling-ideas" class="topMenu__mobileMenu__menuItems">Cheap traveling ideas</nuxt-link>
-        <nuxt-link to="/wild-life-safari" class="topMenu__mobileMenu__menuItems">Wildlife Safari</nuxt-link>
-        <nuxt-link to="/best-street-food" class="topMenu__mobileMenu__menuItems">Best Street food</nuxt-link>
-        <nuxt-link to="/food" class="topMenu__mobileMenu__menuItems">Food</nuxt-link>
-        <!-- <nuxt-link to="/food" class="topMenu__mobileMenu__menuItems">travel</nuxt-link> -->
+        <li @click="closeMobileMenu()" v-for="(menu,menuIndex) in mobilemenus" :key="menuIndex">
+          {{menu}}
+        </li>
+        <li @click="closeMobileMenu()"><nuxt-link to="/blog-posts" class="topMenu__mobileMenu__menuItems">All Posts</nuxt-link></li>
+        <li @click="closeMobileMenu()"><nuxt-link to="/hotel-experience" class="topMenu__mobileMenu__menuItems">Hotel Experiences</nuxt-link></li>
+        <li @click="closeMobileMenu()"><nuxt-link to="/best-travel-place" class="topMenu__mobileMenu__menuItems">Best travel places</nuxt-link></li>
+        <li @click="closeMobileMenu()"><nuxt-link to="/cheap-traveling-ideas" class="topMenu__mobileMenu__menuItems">Cheap traveling ideas</nuxt-link></li>
+        <li @click="closeMobileMenu()"><nuxt-link to="/wild-life-safari" class="topMenu__mobileMenu__menuItems">Wildlife Safari</nuxt-link></li>
+        <li @click="closeMobileMenu()"><nuxt-link to="/best-street-food" class="topMenu__mobileMenu__menuItems">Best Street food</nuxt-link></li>
+        <li @click="closeMobileMenu()"><nuxt-link  to="/food" class="topMenu__mobileMenu__menuItems">Food</nuxt-link></li>
+        <li @click="closeMobileMenu()"><button  class="topMenu__subscribe" @click="focusOnMobile()">Subscribe</button></li>
       </div>
       <div href="javascript:void(0);" class="topMenu__mobileMenu__icon" @click="showMobileMenu()"> 
         <img src="~/assets/images/menu.png" alt="" class="topMenu__mobileMenu-image">
@@ -38,7 +40,7 @@
 
 <script>
 import Button from './Button.vue';
-  
+
   export default{
   components: { Button },
 
@@ -53,25 +55,19 @@ import Button from './Button.vue';
         } 
       },
 
-      async focusOnMobile(){
-        document.getElementById("subscription").focus();
+      async mobilemenus(){
+        let mobilemenu = document.querySelectorAll('topMenu__menuItems');
+        console.log(mobilemenu);
+        return mobilemenu
       },
 
-      async asyncData({$axios}) {
-        if(localStorage.getItem(`hotelExp`) === null){
-          var BlogsCards = await $axios.$get(
-            `http://firstproject.test/wp-json/wp/v2/pages/`
-          )
-          let BlogsCards__serialized =  JSON.stringify(BlogsCards);
-          localStorage.setItem(`hotelExp`,BlogsCards__serialized);
-        }
-        else{
-          let reusltById = localStorage.getItem(`hotelExp`)
-          var BlogsCards = JSON.parse(reusltById)
-        }
-        return{
-          BlogsCards
-        }
+      async closeMobileMenu(){
+        let mobilemenu = document.getElementById('mobileMenu');
+        mobilemenu.style.display = 'none';
+      },  
+
+      async focusOnMobile(){
+        document.getElementById("subscription").focus();
       },
     }
   }

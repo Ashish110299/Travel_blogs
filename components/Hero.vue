@@ -31,7 +31,6 @@
         <img src="~/assets/images/HeroImage.png" alt="" class="slider__image">
       </div>
     </div>
-
     <div class="BlogsCard slider__blogCard" v-show="SearhcInput !== ''" v-for="(posts, postsIndex) in searchResult.data" :key="postsIndex">
       <div class="BlogsCard__details">
         <h3 class="BlogsCard__details_heading" v-html="posts.title.rendered"></h3>
